@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+</head>
+<body>
+{% for s in shops %}
+<p>
+    <h3>number of rooms: {{ s.area }}</h3>
+    <div><small>{{ s.price }}</small></div>
+    <div><small>{{ s.contract_type }}</small></div>
+</p>
+<hr>
+{% endfor %}
+</body>
+</html>
