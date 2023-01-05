@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>House</title>
+</head>
+<body>
+<h1>Available Houses</h1>
+{% for h in object_list %}
+    <hr>
+    <a href="{% url 'house-detail' h.id %}"><img src="{% static h.image %}"></a>
+    <p>
+        <div>Area: {{ h.area }}</div>
+        <div>Rooms: {{ h.num_room }}</div>
+        <div><small>Contact type: {{ h.get_contract_type_display }}</small></div>
+        <div>Price: {{ h.price }}</div>
+    </p>
+<!-- https://stackoverflow.com/questions/15175032/show-images-in-django-templates-->
+
+{% endfor %}
+
+</body>
+</html>

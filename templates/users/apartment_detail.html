@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Apartment detail</title>
+</head>
+<body>
+<h1>Apartment</h1>
+<hr>
+    <a href=""><img src="{% static object.image %}"></a>
+    <p>
+        <div>Area: {{ object.area }}</div>
+        <div>Rooms: {{ object.num_room }}</div>
+        <div><small>Contact type: {{ object.get_contract_type_display }}</small></div>
+        <div>Price: {{ object.price }}</div>
+    </p>
+</body>
+</html>

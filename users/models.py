@@ -25,7 +25,7 @@ class User(models.Model):
     mobile = models.CharField('Mobile', max_length=10, validators=[MinLengthValidator(10)],
                               help_text='10 digit number without 0 at first')
     phone = models.CharField('Phone', max_length=10, validators=[MinLengthValidator(10)], help_text='10 digit number')
-    image = models.ImageField('Profile Image', upload_to='images/users/', default='images/users/default.jpg')
+    image = models.ImageField('Profile Image', upload_to='static/images/users/', default='images/users/default.jpg')
     # Adrese mahale sokonate karbar
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
@@ -48,7 +48,7 @@ class Apartment(models.Model):
     price = models.FloatField('Price', null=True, blank=True)
     Mortgage_price = models.FloatField('Mortgage Price', null=True, blank=True)
     rent_price = models.FloatField('Rent Price', null=True, blank=True)
-    image = models.ImageField('Apartment Image', upload_to='images/apartments/', default='images/apartments/default.jpg',
+    image = models.ImageField('Apartment Image', upload_to='static/images/apartments/', default='images/apartments/default.jpg',
                               null=True, blank=True)
 
 
@@ -66,7 +66,7 @@ class House(models.Model):
     price = models.FloatField('Price', null=True, blank=True)
     Mortgage_price = models.FloatField('Mortgage Price', null=True, blank=True)
     rent_price = models.FloatField('Rent Price', null=True, blank=True)
-    image = models.ImageField('House Image', upload_to='images/houses/', default='images/houses/default.jpg',
+    image = models.ImageField('House Image', upload_to='static/images/houses/', default='images/houses/default.jpg',
                               null=True, blank=True)
 
 
@@ -82,5 +82,5 @@ class Shop(models.Model):
     price = models.FloatField('Price', null=True, blank=True)
     Mortgage_price = models.FloatField('Mortgage Price', null=True, blank=True)
     rent_price = models.FloatField('Rent Price', null=True, blank=True)
-    image = models.ImageField('Shop Image', upload_to='images/shops/', default='images/shops/default.jpg',
+    image = models.ImageField('Shop Image', upload_to='static/images/shops/', default='images/shops/default.jpg',
                               null=True, blank=True)

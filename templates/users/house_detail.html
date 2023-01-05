@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <hr>
+    <a href=""><img src="{% static object.image %}"></a>
+    <p>
+        <div>Area: {{ object.area }}</div>
+        <div>Rooms: {{ object.num_room }}</div>
+        <div><small>Contact type: {{ object.get_contract_type_display }}</small></div>
+        <div>Price: {{ object.price }}</div>
+    </p>
+<!-- https://stackoverflow.com/questions/15175032/show-images-in-django-templates-->
+
+
+</body>
+</html>
