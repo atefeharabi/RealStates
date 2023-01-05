@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+</head>
+<body>
+{% for s in object_list %}
+<hr>
+    <img src="{% static s.image %}">
+<p>
+    <h3>number of rooms: {{ s.area }}</h3>
+    <div><small>{{ s.price }}</small></div>
+    <div><small>{{ s.contract_type }}</small></div>
+</p>
+<hr>
+{% endfor %}
+</body>
+</html>

@@ -1,10 +1,14 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import show_all_places, show_available_apartment, show_available_house, show_available_shop
+from .views import *
 
 urlpatterns = [
     path('', show_all_places),
-    path('house/', show_available_house, name='house'),
-    path('apartment/', show_available_apartment, name='apartment'),
-    path('shop/', show_available_shop, name='shop'),
+    # path('house/', show_available_house, name='house'),
+    path('house/', HouseList.as_view()),
+    # path('apartment/', show_available_apartment, name='apartment'),
+    path('apartment/', ApartmentList.as_view()),
+    # path('shop/', show_available_shop, name='shop'),
+    path('shop/', ShopList.as_view()),
+
 ]
