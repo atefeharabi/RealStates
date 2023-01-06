@@ -9,7 +9,7 @@ class Contract(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='contract_tenant',
                                verbose_name='Tenant/Buyer')
     contract_date = models.DateField('Contract Date', auto_now=True)
-    expire = models.DateField('Expire Date', null=True)
+    expire = models.DateField('Expire Date', default=None)
     h_fk = models.ForeignKey(House, on_delete=models.CASCADE, null=True, verbose_name='House ID')
     A_fk = models.ForeignKey(Apartment, on_delete=models.CASCADE, null=True, verbose_name='Apartment ID')
     s_fk = models.ForeignKey(Shop, on_delete=models.CASCADE, null=True, verbose_name='Shop ID')

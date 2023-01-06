@@ -15,6 +15,9 @@ class Address(models.Model):
     floor = models.CharField('Floor', max_length=50, null=True, blank=True)
     unit = models.CharField('Unit', max_length=50, null=True, blank=True)
 
+    def __str__(self):
+        return f"{self.district} {self.city}"
+
 
 class User(models.Model):
     f_name = models.CharField('First Name', max_length=100)
@@ -28,6 +31,9 @@ class User(models.Model):
     image = models.ImageField('Profile Image', upload_to='static/images/users/', default='images/users/default.jpg')
     # Adrese mahale sokonate karbar
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.f_name} {self.l_name}"
 
 
 class Apartment(models.Model):
@@ -51,6 +57,9 @@ class Apartment(models.Model):
     image = models.ImageField('Apartment Image', upload_to='static/images/apartments/', default='images/apartments/default.jpg',
                               null=True, blank=True)
 
+    def __str__(self):
+        return f"Apartment {self.contract_type} {self.price}"
+
 
 class House(models.Model):
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
@@ -69,6 +78,9 @@ class House(models.Model):
     image = models.ImageField('House Image', upload_to='static/images/houses/', default='images/houses/default.jpg',
                               null=True, blank=True)
 
+    def __str__(self):
+        return f"House {self.contract_type} {self.price}"
+
 
 class Shop(models.Model):
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
@@ -84,3 +96,8 @@ class Shop(models.Model):
     rent_price = models.FloatField('Rent Price', null=True, blank=True)
     image = models.ImageField('Shop Image', upload_to='static/images/shops/', default='images/shops/default.jpg',
                               null=True, blank=True)
+
+    def __str__(self):
+        return f"Shop {self.contract_type} {self.price}"
+
+

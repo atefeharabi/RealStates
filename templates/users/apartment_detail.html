@@ -15,5 +15,10 @@
         <div><small>Contact type: {{ object.get_contract_type_display }}</small></div>
         <div>Price: {{ object.price }}</div>
     </p>
+
+    <form action="{% url 'apartment-contract' object.id %}" method="get">
+        {% csrf_token %}
+        <input type="submit" value="contract">
+    </form>
 </body>
 </html>

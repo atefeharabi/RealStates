@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contract</title>
+</head>
+<body>
+    <div>
+        <li>{{ apt.address }}</li>
+        <li>{{ apt.num_room }}</li>
+        <li>{{ apt.area }}</li>
+        <li>{{ apt.story }}</li>
+        <li>{% if apt.phone %} phone: yes {% endif %}</li>
+    </div>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <label>Date</label>
+        <input type="date" name="date">
+        <label>Expire Date</label>
+        <input type="date" name="ex_date">
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+</html>
